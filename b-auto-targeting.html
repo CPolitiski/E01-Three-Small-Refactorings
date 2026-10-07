@@ -45,11 +45,11 @@
         {
           continue;
         }
-        // If the enemies have the same health attack the latter enemy
-          if (target && target.health > enemy.health) {
-          continue;
+        // if there is no target or if the enemy has has at least the same amount of health as the target change target
+        // If the enemies have the same health attack the later enemy
+          if (target === null || enemy.health >= target.health) {
+            target = enemy;
           }
-          target = enemy;
       }
       return target;
     }
